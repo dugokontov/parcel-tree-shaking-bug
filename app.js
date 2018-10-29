@@ -1,11 +1,7 @@
-import DataSource from './DataSource';
+import React from 'react';
+import { render } from 'react-dom';
+import RootComponent from './RootComponent';
 
-function showMessage(content) {
-    console.log(content);
-}
-
-window.onload = function() {
-    const foo = new DataSource();
-    foo.on('EVENT', showMessage);
-    foo.runEvent();
-}
+window.onload = () => {
+    render(<RootComponent />, document.getElementById('application'));
+};
